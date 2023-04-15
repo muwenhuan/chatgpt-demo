@@ -119,7 +119,7 @@ export default () => {
       }
       const data = response.body
       if (!data)
-        throw new Error('No data')
+        throw new Error('没有数据')
 
       const reader = data.getReader()
       const decoder = new TextDecoder('utf-8')
@@ -230,7 +230,7 @@ export default () => {
         when={!loading()}
         fallback={() => (
           <div class="gen-cb-wrapper">
-            <span>AI is thinking...</span>
+            <span>人工智能正在思考...</span>
             <div class="gen-cb-stop" onClick={stopStreamFetch}>Stop</div>
           </div>
         )}
@@ -240,7 +240,7 @@ export default () => {
             ref={inputRef!}
             disabled={systemRoleEditing()}
             onKeyDown={handleKeydown}
-            placeholder="Enter something..."
+            placeholder="输入你的问题开始对话..."
             autocomplete="off"
             autofocus
             onInput={() => {
